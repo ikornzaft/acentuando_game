@@ -23,3 +23,7 @@ function init() {
 }
 
 init();
+
+elements.continue.addEventListener('click', () => {
+  expandsStage(elements.stage1);
+})

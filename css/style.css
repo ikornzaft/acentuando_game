@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 40vw;
-  min-height: 70vh;
+  height: 600px;
   display: flex;
   flex-direction: column;
 }
@@ -154,7 +154,7 @@ body {
 }
 
 #icon__sound {
-  margin: 50px;
+  margin: 40px;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -164,3 +164,12 @@ body {
   transform: rotate(360deg);
 }
 
+#continue {
+  color: green;
+  cursor: pointer;
+}
+
+#continue:hover {
+  color: #fff;
+  text-shadow: 0 0 0.5em green;
+}

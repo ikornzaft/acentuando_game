@@ -14,5 +14,6 @@ export const elements = {
   stage3: document.getElementById('stage-3'),
   stages: document.querySelectorAll('.stage'),
   contents: document.querySelectorAll('.content'),
-  audioBtn: document.getElementById('icon__sound')
+  audioBtn: document.getElementById('icon__sound'),
+  continue: document.getElementById('continue')
 }

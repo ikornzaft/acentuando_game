@@ -1,4 +1,3 @@
-/* font-family: 'Amatic SC', cursive; */
 
 * {
   margin: 0;
@@ -52,6 +51,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  overflow: hidden;
 }
 
 .stage {
@@ -66,6 +66,7 @@ body {
   align-items: center;
   background-image: url("../img/doodles.jpg");
   background-size: cover;
+  transition: height 0.4s ease-in;
 }
 
 #stage-0:before {
@@ -144,7 +145,7 @@ body {
 }
 
 .content {
-  padding: 30px;
+  padding: 20px;
   font-size: 1.7rem;
   z-index: 10;
 }
@@ -172,4 +173,67 @@ body {
 #continue:hover {
   color: #fff;
   text-shadow: 0 0 0.5em green;
+}
+
+.input {
+height: 25px;
+margin: 15px;
+border: 2px solid #333;
+border-radius: 5px;
+padding: 15px 10px;
+font-family: 'Poppins', sans-serif;
+font-size: 1.3rem;
+font-weight: 200;
+}
+
+
+#stage1__footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#stage1__footer .text {
+  font-size: 1.3rem;
+}
+
+#img__machine {
+  width: 100px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+#input__syll {
+  width: 100px;
+  text-align: center;
+}
+
+#syll__text {
+  font-size: 1.3rem;
+}
+
+.container__syll {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.syllable {
+  width: 90px;
+  height: 90px;
+  background: url('../img/caja.svg');
+  margin: 10px 20px 0 20px;
+}
+
+.skin {
+  position: relative;
+  left: 20px;
+  top: 52px;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transform: skewY(155deg);
 }

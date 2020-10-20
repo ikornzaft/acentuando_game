@@ -33,6 +33,15 @@
           <p>Stage 1: Transcripción</p>
         </div>
         <div class="content">
+          <p>Transcribí la palabra que acabás de oir:</p>
+          <input class="input" type="text" id="input__word" maxlength="15" placeholder="¡Escribí acá!">
+          <p>¡Recordá cuidar la ortografía y agregar las tildes!</p>
+          <div id="stage1__footer">
+            <div class="text">Al terminar, apretá "enter" o "click" en la máquina.</div>
+            <div class="machine">
+              <img id="img__machine" src="./img/transportador.svg" alt="maquina">
+            </div>
+          </div>
         </div>
       </div>
       <div class="stage" id="stage-2">
@@ -40,6 +49,11 @@
           <p>Stage 2: Silabeo</p>
         </div>
         <div class="content">
+          <p>¡Excelente! La palabra se escribe "<span id="word">palabra</span>"</p>
+          <p>Ahora tendrás que separarla en sílabas.</p>
+          <input class="input" type="text" id="input__syll" maxlength="5">
+          <p id="syll__text">Escribí la <span id="syll__number">primera</span> sílaba y presioná "enter"</p>
+          <div class="container__syll"></div>
         </div>
       </div>
       <div class="stage" id="stage-3">
@@ -47,10 +61,14 @@
           <p>Stage 3: Acentuación</p>
         </div>
         <div class="content">
+          <p>¡Muy bien! Ya tenemos a la palabra dividida en sílabas.</p>
+          <p>Por último, tenemos que descubrir cuál es la sílaba tónica.</p>
+          <div class="container__syll"></div>
         </div>
       </div>
     </div>
   </div>
+  <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
   <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
@@ -200,7 +201,7 @@ font-weight: 200;
 
 #img__machine {
   width: 100px;
-  margin-left: 50px;
+  margin-left: 30px;
   cursor: pointer;
 }
 
@@ -218,6 +219,12 @@ font-weight: 200;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
+  height: 90px;
+  margin-top: 30px;
+}
+
+.container__syll.reactive {
+  justify-content: center;
 }
 
 .syllable {
@@ -227,13 +234,74 @@ font-weight: 200;
   margin: 10px 20px 0 20px;
 }
 
+.syllable.reactive {
+  cursor: pointer;
+}
+
+.syllable.reactive:hover {
+  transition: 0.2;
+  transform: scale(1.1, 1.1);
+}
+
 .skin {
   position: relative;
-  left: 20px;
+  left: 21px;
   top: 52px;
   color: #000;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   transform: skewY(155deg);
+}
+
+.cheer {
+  position: absolute;
+  top: 240px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: #333 0px 0px 1px;
+  z-index: 15;
+  opacity: 0;
+  animation: cheer 0.8s ease-in-out 0s 1;
+}
+
+.small__cheer {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: #333 0px 0px 1px;
+  z-index: 15;
+  opacity: 0;
+  animation: smallCheer 0.5s ease-in-out 0s 1;
+}
+
+@keyframes cheer {
+  0% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+
+  50% {
+    opacity: 1;
+    font-size: 8rem;
+  }
+  100% {
+    opacity: 0;
+    font-size: 16rem;
+  }
+}
+
+@keyframes smallCheer {
+  0% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+
+  50% {
+    opacity: 1;
+    font-size: 3rem;
+  }
+  100% {
+    opacity: 0;
+    font-size: 6rem;
+  }
 }

@@ -4,21 +4,33 @@ export const words = [
   [['co', 'ci', 'na'], 'grave', 'syll-2'],
   [['he', 'la', 'de', 'ra'], 'grave', 'syll-3'],
   [['pi', 'za', 'rrón'], 'aguda', 'syll-3'], 
-  [['pro', 'vin','cia'],'grave', 'syll-2']
+  [['pro', 'vin','cia'],'grave', 'syll-2'],
+  [['bo', 'tín'], 'aguda', 'syll-2'],
+  [['ha', 'cien', 'do'], 'grave', 'syll-2'],
+  [['mar', 'cia', 'no'], 'grave', 'syll-2'],
+  [['a', 'gu', 'ja'], 'grave', 'syll-2'],
+  [['ca', 'mi', 'sa'], 'grave', 'syll-2'],
+  [['te', 'lé', 'fo', 'no'], 'esdrújula', 'syll-2'],
+  [['ja', 'bón'], 'aguda', 'syll-2'],
+  [['fe', 'liz'], 'aguda', 'syll-2'],
+  [['es', 'pan', 'ta', 'pá', 'ja', 'ros'], 'esdrújula', 'syll-4']
 ];
 
 export const elements = {
+  board: document.querySelector('.board'),
   stage0: document.getElementById('stage-0'),
   stage1: document.getElementById('stage-1'),
   stage2: document.getElementById('stage-2'),
   stage3: document.getElementById('stage-3'),
   stages: document.querySelectorAll('.stage'),
+  score: document.getElementById('score'),
+  hiscore: document.getElementById('hiscore'),
   contents: document.querySelectorAll('.content'),
   audioBtn: document.getElementById('icon__sound'),
   continue: document.getElementById('continue'),
   inputWord: document.getElementById('input__word'),
   inputSyll: document.getElementById('input__syll'),
-  machine: document.getElementById('img__machine'),
+  machine: document.querySelector('.machine'),
   stage1Text: document.getElementById('stage1__text'),
   stage2Text1: document.getElementById('stage2__text1'),
   stage2Text2: document.getElementById('stage2__text2'),
@@ -34,8 +46,11 @@ export const elements = {
   stage: 0,
   word: '',
   wordString: '',
+  wordsArr: [],
   endStage2: false,
-  syllNumber: 1
+  actualScore: 0,
+  record: 0,
+  syllNumber: 1,
 }
 
 export const cheersMap = new Map();

@@ -12,9 +12,9 @@
   <div class="container">
     
     <div class="header">
-      <label id="score">Puntaje: </label>
+      <label>Puntaje: <span id="score">0</span></label>
       <h1>Acentuando</h1>
-      <label id="hiscore">Hi-Score:</label>
+      <label>Hi-Score: <span id="hiscore">0</span></label>
     </div>
     <div class="board">
       <div class="stage" id="stage-0">
@@ -25,7 +25,7 @@
           <p>Prestá mucha atención al audio.</p>
           <p>Podés escucharlo cuantas veces quieras.</p>
           <i class="fas fa-volume-up fa-2x" id="icon__sound"></i>
-          <p>Cuando estés listo... <spam id="continue">¡continuamos!</spam></p>
+          <p>Cuando estés listo... <spam id="continue">¡continuamos!</spam> (presioná "enter")</p>
         </div>
       </div>
       <div class="stage" id="stage-1">
@@ -37,9 +37,10 @@
           <input class="input" type="text" id="input__word" maxlength="15" placeholder="¡Escribí acá!">
           <p id="stage1__text">¡Recordá cuidar la ortografía y agregar las tildes!</p>
           <div id="stage1__footer">
-            <div class="text instruction">Al terminar, apretá "enter" o "click" en la máquina.</div>
+            <div class="text instruction">Al terminar, apretá "enter" o "click" en los engranajes.</div>
             <div class="machine">
-              <img id="img__machine" src="./img/transportador.svg" alt="maquina">
+              <img id="img__machine1" src="./img/engranaje.svg" alt="engranaje">
+              <img id="img__machine2" src="./img/engranaje.svg" alt="engranaje">
             </div>
           </div>
         </div>
@@ -67,8 +68,7 @@
       </div>
     </div>
   </div>
-  <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+  <div class="flaticon">Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a> - Sound from Zapsplat.com</div>
   <script type="module" src="main.js"></script>
-  <div>Sound from Zapsplat.com</div>
 </body>
 </html>

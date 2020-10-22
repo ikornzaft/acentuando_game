@@ -3,6 +3,7 @@ import { elements, cheersMap, colorMap } from "./base.js";
 // Expands the selected stage
 export function expandsStage(stg) {
   
+  // Reduce all stages
   elements.stages.forEach(e => {
   e.style.height = "50px";
   e.style.zIndex = "7";
@@ -11,6 +12,10 @@ export function expandsStage(stg) {
     e.classList.add('hidden');
   })
   
+  // Updates the scores
+  elements.score.textContent = elements.actualScore;
+  elements.hiscore.textContent = elements.record;
+
   // Expands and makes visible the content of the selected stage
   stg.style.height = '100%';
   stg.lastElementChild.classList.remove('hidden');
@@ -20,6 +25,7 @@ export function expandsStage(stg) {
     elements.inputWord.value = "";
     elements.stage = 1;
   } else if (stg.id === 'stage-2') {
+    updateSyllNumber(elements.syllNumber);
     elements.wordSpan.textContent = elements.wordString;
     elements.inputSyll.value = "";
     elements.inputSyll.focus();
@@ -31,6 +37,11 @@ export function expandsStage(stg) {
 
 // Render cheer
 export function cheers(num) {
+
+  // updates the score
+  elements.actualScore += num;
+  elements.score.textContent = elements.actualScore;
+
   // Choose random message
   let cheerMessage = cheersMap.get(Math.floor(Math.random() * (cheersMap.size) + 0));
   // Choose random color
@@ -52,6 +63,11 @@ export function cheers(num) {
 
 // Render small cheer
 export function syllCheers(num) {
+
+  // updates the score
+  elements.actualScore += num;
+  elements.score.textContent = elements.actualScore;
+
   // Choose random color
   let cheerColor = colorMap.get(Math.floor(Math.random() * (colorMap.size) + 0));
   const markup = `
@@ -93,15 +109,20 @@ export function wrongSyll() {
   }, 2000);
 }
 
+
 export function updateSyllNumber(num) {
   if (num === 1) {
-    elements.syllNumText.textContent = 'segunda';
+    elements.syllNumText.textContent = 'primera';
   } else if (num === 2) {
-    elements.syllNumText.textContent = 'tercera';
+    elements.syllNumText.textContent = 'segunda';
   } else if (num === 3) {
-    elements.syllNumText.textContent = 'cuarta';
+    elements.syllNumText.textContent = 'tercera';
   } else if (num === 4) {
+    elements.syllNumText.textContent = 'cuarta';
+  } else if (num === 5) {
     elements.syllNumText.textContent = 'quinta';
+  } else if (num === 6) {
+    elements.syllNumText.textContent = 'sexta';
   };
 }
 
@@ -109,27 +130,67 @@ export function renderSyll(syll, num) {
   const markup = `
   <div class="syllable" id="syll-${num}">
     <div class="skin" id="skin-${num}">
-      <div>${syll.toLowerCase()}</div>
+    <div>${syll.toLowerCase()}</div>
     </div>
-  </div>
+    </div>
+    `;
+    
+    elements.containerSyll.insertAdjacentHTML('afterbegin', markup);
+  }
+  
+  export function accRight(type) {
+    elements.stage3Text1.textContent = '¡Felicitaciones!';
+    elements.stage3Text2.textContent = `La palabra ${elements.wordString} es ${type}.`;
+    setTimeout(() => {
+      new Audio(`./audio/final.mp3`).play();
+      elements.stage3Text1.textContent = '¡Muy bien! Ya tenemos a la palabra dividida en sílabas.';
+      elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
+      elements.inputSyll.style.visibility = 'visible';
+      elements.syllText.style.visibility = 'visible';
+      elements.stage = 0;
+      elements.endStage2 = false;
+      elements.syllNumber = 1;
+      document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
+      elements.container2.appendChild(elements.containerSyll);
+    }, 2000);
+  }
+  
+  // If the user inputs a wrong syllable
+  export function accWrong(type) {
+    elements.stage = 0;
+    elements.stage3Text1.style.visibility = 'hidden';
+    new Audio(`./audio/003.mp3`).play();
+  
+    elements.stage3Text2.textContent = `¡Oh, no! ¡La palabra ${elements.wordString} es ${type}!`;
+    setTimeout(() => {
+      elements.stage3Text1.style.visibility = 'visible';
+      elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
+      elements.inputSyll.style.visibility = 'visible';
+      elements.syllText.style.visibility = 'visible';
+      elements.endStage2 = false;
+      elements.syllNumber = 1;
+      document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
+      elements.container2.appendChild(elements.containerSyll);
+    }, 2000);
+  }
+
+export function finish() {
+  elements.stage = -1;
+  // erase used word list
+  elements.wordsArr.length = 0;
+  const markup = `
+    <div id="finish">
+      <div id="text__finish">
+        ¡Felicitaciones! ¡Lograste un nuevo record!
+      </div>
+      <p>Presioná "enter" para volver a jugar</p>
+    </div>
   `;
 
-  elements.containerSyll.insertAdjacentHTML('afterbegin', markup);
-}
-
-export function accRight(type) {
-  elements.stage3Text1.textContent = '¡Felicitaciones!';
-  elements.stage3Text2.textContent = `La palabra ${elements.wordString} es ${type}.`;
-  setTimeout(() => {
-    new Audio(`./audio/final.mp3`).play();
-    elements.stage3Text1.textContent = '¡Muy bien! Ya tenemos a la palabra dividida en sílabas.';
-    elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
-    elements.inputSyll.style.visibility = 'visible';
-    elements.syllText.style.visibility = 'visible';
-    elements.stage = 0;
-    elements.endStage2 = false;
-    elements.syllNumber = 1;
-    document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
-    elements.container2.appendChild(elements.containerSyll);
-  }, 2000);
+  elements.board.insertAdjacentHTML('afterbegin', markup);
+  if (elements.actualScore > elements.record) {
+    elements.record = elements.actualScore;
+  } else {
+    document.getElementById('text__finish').textContent = '¡Volvé a intentarlo!';
+  }
 }

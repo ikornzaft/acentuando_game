@@ -1,5 +1,5 @@
 import { elements, words } from "./base.js";
-import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumber, renderSyll, accRight } from "./views.js"
+import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumber, renderSyll, accRight, accWrong, finish } from "./views.js"
 
 /************
  * FUNCTIONS
@@ -8,12 +8,18 @@ import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumbe
 function init() {
   elements.word = selectWord();
   elements.wordString = elements.word[0].join('');
+  elements.syllNumber = 1;
   expandsStage(elements.stage0);
 }
 
 // Choose word
 function selectWord() {
-  return words[Math.floor(Math.random() * (words.length - 0) + 0)];
+  let wordNum;
+  do {
+    wordNum = Math.floor(Math.random() * (words.length - 0) + 0);
+  } while (elements.wordsArr.includes(wordNum));
+  elements.wordsArr.push(wordNum);
+  return words[wordNum];
 }
 
 // Play word .mp3
@@ -29,22 +35,21 @@ function checkWord(w) {
   } else {
     wrongWord(elements.wordString);
     setTimeout(() => {
-      init();
+      finish();
     }, 2000);
   }
 }
 
 // Check the syllabes, one by one
 function checkSyll(s) {
-  console.log(elements.syllNumber);
   if (s !== elements.word[0][elements.syllNumber - 1]) {
     wrongSyll();
     elements.syllNumber = 1;
     setTimeout(() => {
-      init();
+      finish();
     }, 2000);
   } else {
-    updateSyllNumber(elements.syllNumber);
+    updateSyllNumber(elements.syllNumber + 1);
     renderSyll(s, elements.syllNumber);
     syllCheers(5);
     elements.syllNumber++;
@@ -72,6 +77,11 @@ function checkAccentuation(el) {
       setTimeout(() => {
         init();
       }, 2000);
+    } else {
+      accWrong(elements.word[1]);
+      setTimeout(() => {
+        finish();
+      }, 2000);
     }; 
   }
 }
@@ -91,9 +101,25 @@ document.addEventListener('keydown', function keyEnter(e) {
   if (e.code === 'Enter' && elements.stage === 0) {
     expandsStage(elements.stage1); // if stage = 0, expands Stage 1
   } else if (e.code === 'Enter' && elements.stage === 1) { 
-    checkWord(elements.inputWord.value); // calls checkWord function passing inputWord value
+    checkWord(elements.inputWord.value.toLowerCase()); // calls checkWord function passing inputWord value
   } else if (e.code === 'Enter' && elements.stage === 2 && !elements.endStage2) {
     checkSyll(elements.inputSyll.value.toLowerCase());
+  } else if (e.code === 'Enter' && elements.stage < 0) {
+    elements.stage = 0;
+    elements.actualScore = 0;
+    elements.board.removeChild(document.getElementById('finish'));
+    init();
+  } else if (e.code === 'Space' && elements.stage === 0) {
+    playSound(elements.wordString);
+  }
+});
+
+elements.board.addEventListener('click', () => {
+  if (elements.stage < 0) {
+    elements.stage = 0;
+    elements.actualScore = 0;
+    elements.board.removeChild(document.getElementById('finish'));
+    init();
   }
 });
 

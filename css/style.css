@@ -199,10 +199,34 @@ font-weight: 200;
   font-size: 1.3rem;
 }
 
-#img__machine {
-  width: 100px;
-  margin-left: 30px;
+.machine {
   cursor: pointer;
+  position: relative;
+  margin-left: 30px;
+}
+
+.machine:hover #img__machine1 {
+  transition: 0.5s ease-in-out;
+  transform: rotate(360deg);
+}
+
+.machine:hover #img__machine2 {
+  transition: 0.5s ease-in-out ;
+  transform: rotate(-360deg);
+}
+
+#img__machine1 {
+  position: relative;
+  width: 80px;
+
+}
+
+#img__machine2 {
+  position: relative;
+  top: -30px;
+  left: -7px;
+  width: 60px;
+
 }
 
 #input__syll {
@@ -304,4 +328,33 @@ font-weight: 200;
     opacity: 0;
     font-size: 6rem;
   }
+}
+
+.flaticon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#finish {
+  z-index: 20;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #333;
+  background-color: #aaa;  
+  background-image: url("../img/robot.png");
+  background-size: cover;
+  width: 550px;
+  height: 350px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#finish p {
+  margin-top: 30px;
+  font-size: 1.2rem;
 }

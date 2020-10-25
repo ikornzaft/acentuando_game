@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  width: 40vw;
+  width: 800px;
   height: 600px;
   display: flex;
   flex-direction: column;
@@ -53,6 +53,13 @@ body {
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
+}
+
+.enter {
+  position: relative;
+  width: 50px;
+  top: 10px;
+  margin: 0 5px;
 }
 
 .stage {

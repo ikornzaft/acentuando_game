@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="72"
+   inkscape:export-xdpi="72"
+   inkscape:export-filename="F:\Nacho\OneDrive\AREAS\CODE\Javascript\Tests\acentuando 2\img\enter.png"
+   width="106.51295mm"
+   height="98.788818mm"
+   viewBox="0 0 106.51295 98.788818"
+   version="1.1"
+   id="svg910"
+   sodipodi:docname="enter_key.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+  <defs
+     id="defs904">
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="202.93104"
+       height="362.03867"
+       patternTransform="translate(1154.4068,338.97109)"
+       id="pattern1280">
+      <path
+         id="path1276"
+         style="opacity:0.506452;fill:#0000ff;stroke:none;stroke-width:11.3348;stroke-miterlimit:4;stroke-dasharray:none"
+         d="M 0,0 H 202.93104 V 362.03867 H 0 Z" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="202.93104"
+       height="362.03868"
+       patternTransform="translate(1132.4068,319.9711)"
+       id="pattern2253">
+      <path
+         id="path2251"
+         style="opacity:0.506452;fill:#0000ff;stroke:none;stroke-width:11.336;stroke-miterlimit:4;stroke-dasharray:none"
+         d="M 0,0 H 202.93104 V 362.03868 H 0 Z" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="202.93104"
+       height="362.03868"
+       patternTransform="translate(1132.4068,319.9711)"
+       id="pattern2262">
+      <path
+         id="path2260"
+         style="opacity:0.506452;fill:#0000ff;stroke:none;stroke-width:11.336;stroke-miterlimit:4;stroke-dasharray:none"
+         d="M 0,0 H 202.93104 V 362.03868 H 0 Z" />
+    </pattern>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="921.6079"
+     inkscape:cy="381.96336"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-smooth-nodes="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata907">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-57.475006,-71.090741)">
+    <path
+       id="rect1254"
+       style="opacity:1;fill:#5a5aff;fill-opacity:1;stroke:#000000;stroke-width:11.336;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 448.63281,274.35742 c -20.93858,0 -37.79492,16.85634 -37.79492,37.79492 v 98.23633 c -3.74323,11.07348 -12.45534,19.80853 -23.51367,23.58399 L 261.08008,433.7793 c -20.93856,-0.0323 -37.83514,16.79781 -37.88477,37.73632 l -0.29883,126.47266 c -0.0496,20.93849 16.76653,37.82121 37.70508,37.85352 l 183.54883,0.2832 c 1.47044,0.17238 2.96419,0.27148 4.48242,0.27148 h 127.33985 c 13.09479,0 24.59201,-6.59323 31.36914,-16.65429 0.0845,-0.12476 0.16107,-0.25504 0.24414,-0.38086 3.92804,-5.94965 6.22591,-13.08021 6.24414,-20.76953 l 0.29883,-126.47266 c 0.004,-1.79385 -0.12406,-3.55499 -0.35938,-5.28125 V 312.15234 c 0,-20.93858 -16.85829,-37.79492 -37.79687,-37.79492 z"
+       transform="scale(0.26458333)"
+       inkscape:export-filename="C:\Users\ikorn\Desktop\enter.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
+    <rect
+       style="fill:none;stroke:none"
+       transform="scale(0.26458333)"
+       width="202.93105"
+       height="362.03867"
+       x="1132.4069"
+       y="319.9711"
+       id="rect2256" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:20.8369px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.520925"
+       x="74.670105"
+       y="132.69986"
+       id="text2282"
+       transform="scale(0.94585546,1.057244)"
+       inkscape:export-filename="C:\Users\ikorn\Desktop\enter.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72"><tspan
+         sodipodi:role="line"
+         id="tspan2280"
+         x="74.670105"
+         y="132.69986"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dubai;-inkscape-font-specification:Dubai;fill:#ffffff;stroke-width:0.520925">ENTER</tspan></text>
+    <path
+       id="path2286"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.659488;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:transform-center-x="1.9720377"
+       inkscape:transform-center-y="1.0319433e-06"
+       d="m 143.60648,145.1194 c 0.0709,2.20435 -1.95416,4.04778 -3.94469,3.7461 -6.57001,0 -13.14003,0 -19.71004,0 10e-6,-1.00195 0,-2.00391 0,-3.00586 -2.96668,1.85482 -5.93337,3.70963 -8.90006,5.56445 2.96669,1.85417 5.93338,3.70834 8.90006,5.5625 0,-0.88086 10e-6,-1.76172 0,-2.64258 8.69214,-0.0124 17.38662,0.0419 26.07726,-0.039 2.10957,-0.24364 3.70525,-2.5468 3.45912,-4.804 0,-6.39739 0,-12.79479 0,-19.19218 -1.96055,0 -3.9211,0 -5.88165,0 0,4.93685 0,9.8737 0,14.81054 z"
+       inkscape:export-filename="C:\Users\ikorn\Desktop\enter.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
+  </g>
+</svg>

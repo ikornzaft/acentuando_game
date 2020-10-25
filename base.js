@@ -13,7 +13,15 @@ export const words = [
   [['te', 'lé', 'fo', 'no'], 'esdrújula', 'syll-2'],
   [['ja', 'bón'], 'aguda', 'syll-2'],
   [['fe', 'liz'], 'aguda', 'syll-2'],
-  [['es', 'pan', 'ta', 'pá', 'ja', 'ros'], 'esdrújula', 'syll-4']
+  [['es', 'pan', 'ta', 'pá', 'ja', 'ros'], 'esdrújula', 'syll-4'],
+  [['co', 'mi', 'da'], 'grave', 'syll-2'],
+  [['ex', 'plo', 'sión'], 'aguda', 'syll-3'],
+  [['car', 'bón'], 'aguda', 'syll-2'],
+  [['tí', 'te', 're'], 'esdrújula', 'syll-1'],
+  [['más', 'ca', 'ra'], 'esdrújula', 'syll-1'],
+  [['fri', 'tu', 'ra'], 'grave', 'syll-2'],
+  [['ca', 'le', 'fón'], 'aguda', 'syll-3'],
+  [['au', 'to', 'mó', 'vil'], 'grave', 'syll-3']
 ];
 
 export const elements = {

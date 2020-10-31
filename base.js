@@ -1,27 +1,68 @@
-export const words = [
-  [['fá', 'bri', 'ca'], 'esdrújula', 'syll-1'],
-  [['ca', 'pa', 'ci', 'dad'], 'aguda', 'syll-4'],
-  [['co', 'ci', 'na'], 'grave', 'syll-2'],
-  [['he', 'la', 'de', 'ra'], 'grave', 'syll-3'],
-  [['pi', 'za', 'rrón'], 'aguda', 'syll-3'], 
-  [['pro', 'vin','cia'],'grave', 'syll-2'],
-  [['bo', 'tín'], 'aguda', 'syll-2'],
-  [['ha', 'cien', 'do'], 'grave', 'syll-2'],
-  [['mar', 'cia', 'no'], 'grave', 'syll-2'],
-  [['a', 'gu', 'ja'], 'grave', 'syll-2'],
-  [['ca', 'mi', 'sa'], 'grave', 'syll-2'],
-  [['te', 'lé', 'fo', 'no'], 'esdrújula', 'syll-2'],
-  [['ja', 'bón'], 'aguda', 'syll-2'],
-  [['fe', 'liz'], 'aguda', 'syll-2'],
-  [['es', 'pan', 'ta', 'pá', 'ja', 'ros'], 'esdrújula', 'syll-4'],
-  [['co', 'mi', 'da'], 'grave', 'syll-2'],
-  [['ex', 'plo', 'sión'], 'aguda', 'syll-3'],
-  [['car', 'bón'], 'aguda', 'syll-2'],
-  [['tí', 'te', 're'], 'esdrújula', 'syll-1'],
-  [['más', 'ca', 'ra'], 'esdrújula', 'syll-1'],
-  [['fri', 'tu', 'ra'], 'grave', 'syll-2'],
-  [['ca', 'le', 'fón'], 'aguda', 'syll-3'],
-  [['au', 'to', 'mó', 'vil'], 'grave', 'syll-3']
+
+
+export const wordsBase = [
+  [
+    [['ca', 'pa', 'ci', 'dad'], 'aguda', 'syll-4'],
+    [['co', 'ci', 'na'], 'grave', 'syll-2'],
+    [['se', 'mi', 'lla'], 'grave', 'syll-2'],
+    [['pi', 'ña', 'ta'], 'grave', 'syll-2'],
+    [['la', 'var'], 'aguda', 'syll-2'],
+    [['ma', 'te'], 'grave', 'syll-1'],
+    [['cas', 'co'], 'grave', 'syll-1'],
+    [['em', 'pa', 'na', 'da'], 'grave', 'syll-3'],
+    [['lla', 've'], 'grave', 'syll-1'],
+    [['pe', 'rro'], 'grave', 'syll-1'],
+    [['co', 'mi', 'da'], 'grave', 'syll-2'],
+    [['he', 'la', 'de', 'ra'], 'grave', 'syll-3'],
+    [['mar', 'cia', 'no'], 'grave', 'syll-2'],
+    [['ra', 'tón'], 'aguda', 'syll-2']
+  ],
+  [
+    [['pi', 'za', 'rrón'], 'aguda', 'syll-3'], 
+    [['pro', 'vin','cia'],'grave', 'syll-2'],
+    [['fá', 'bri', 'ca'], 'esdrújula', 'syll-1'],
+    [['ca', 'mi', 'sa'], 'grave', 'syll-2'],
+    [['ha', 'cien', 'do'], 'grave', 'syll-2'],
+    [['gim', 'na', 'sia'], 'grave', 'syll-2'],
+    [['ma', 'yor', 'do', 'mo'], 'grave', 'syll-3'],
+    [['fe', 'liz'], 'aguda', 'syll-2'],
+    [['car', 'bón'], 'aguda', 'syll-2'],
+    [['ce', 'pi', 'llo'], 'grave', 'syll-2'],
+    [['a', 'gu', 'ja'], 'grave', 'syll-2'],
+    [['ca', 'le', 'fón'], 'aguda', 'syll-3'],
+    [['fri', 'tu', 'ra'], 'grave', 'syll-2'],
+    [['ja', 'bón'], 'aguda', 'syll-2'],
+    [['te', 'lé', 'fo', 'no'], 'esdrújula', 'syll-2'],
+    [['bo', 'tín'], 'aguda', 'syll-2']
+  ],
+  [
+    [['es', 'pan', 'ta', 'pá', 'ja', 'ros'], 'esdrújula', 'syll-4'],
+    [['ex', 'plo', 'sión'], 'aguda', 'syll-3'],
+    [['llo', 'viz', 'na'], 'grave', 'syll-2'],
+    [['más', 'ca', 'ra'], 'esdrújula', 'syll-1'],
+    [['au', 'to', 'mó', 'vil'], 'grave', 'syll-3'],
+    [['ca', 'la', 've', 'ra'], 'grave', 'syll-3'],
+    [['ce', 'bo', 'lla'], 'grave', 'syll-2'],
+    [['ca', 'ce', 'ro', 'la'], 'grave', 'syll-3'],
+    [['hen', 'di', 'du', 'ra'], 'grave', 'syll-3'],
+    [['he', 'bi', 'lla'], 'grave', 'syll-2'],
+    [['tí', 'te', 're'], 'esdrújula', 'syll-1'],
+    [['hé', 'li', 'ce'], 'esdrújula', 'syll-1'],
+    [['ca', 'be', 'zón'], 'aguda', 'syll-3'],
+    [['co', 'ci', 'na'], 'grave', 'syll-2']
+  ],
+  [
+    [['náu', 'fra', 'go'], 'esdrújula', 'syll-1'],
+    [['co', 'á', 'gu', 'lo'], 'esdrújula', 'syll-2'],
+    [['e', 'ó', 'li', 'co'], 'esdrújula', 'syll-2'],
+    [['coá', 'gu', 'lo'], 'esdrújula', 'syll-1'],
+    [['far', 'ma', 'céu', 'ti', 'co'], 'esdrújula', 'syll-3'],
+    [['bio', 'grá', 'fi', 'co'], 'esdrújula', 'syll-2'],
+    [['ca', 'ce', 'rí', 'a'], 'grave', 'syll-3'],
+    [['bú', 'ho'], 'grave', 'syll-1'],
+    [['e', 'go', 'ís', 'mo'], 'grave', 'syll-3'],
+    [['de', 'sa', 'fí' , 'o'], 'grave', 'syll-3']
+  ]
 ];
 
 export const elements = {
@@ -52,13 +93,17 @@ export const elements = {
   container2: document.getElementById('content__stage2'),
   container3: document.getElementById('content__stage3'),
   stage: 0,
+  level: 0,
+  wordNum: 0,
   word: '',
   wordString: '',
   wordsArr: [],
   endStage2: false,
+  actualLevelWords: wordsBase[0],
+  prevScore: 0,
   actualScore: 0,
   record: 0,
-  syllNumber: 1,
+  syllNumber: 1
 }
 
 export const cheersMap = new Map();

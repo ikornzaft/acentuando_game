@@ -146,4 +146,12 @@ elements.containerSyll.addEventListener('click', el => checkAccentuation(el));
 /************
  * Start game
  */
+window.addEventListener('load', () => {
+  if (localStorage.getItem('hiScore')) {
+    elements.record = localStorage.getItem('hiScore');
+  } else {
+    elements.record = 0;
+  }
+  elements.hiscore.textContent = elements.record;
+});
 init();

@@ -191,6 +191,7 @@ export function finish() {
   elements.board.insertAdjacentHTML('afterbegin', markup);
   if (elements.actualScore > elements.record) {
     elements.record = elements.actualScore;
+    localStorage.setItem('hiScore', elements.actualScore);
   } else {
     document.getElementById('text__finish').textContent = '¡Volvé a intentarlo!';
   }

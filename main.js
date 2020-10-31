@@ -120,6 +120,7 @@ document.addEventListener('keydown', function keyEnter(e) {
     elements.stage = 0;
     elements.actualScore = 0;
     elements.board.removeChild(document.getElementById('finish'));
+    document.body.style.backgroundImage = `url("./img/wallpaper-0.jpg")`;
     init();
   } else if (e.code === 'Space' && elements.stage === 0) {
     playSound(elements.wordString);

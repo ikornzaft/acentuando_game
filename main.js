@@ -14,7 +14,7 @@ function init() {
 
 // Choose word
 function selectRandomWord() {
-  if (elements.prevScore + 350 <= elements.actualScore) newLevel();
+  if (elements.prevScore + 320 <= elements.actualScore) newLevel();
   do {
     elements.wordNum = Math.floor(Math.random() * (elements.actualLevelWords.length) + 0); // Le saqué el -0 después de length
   } while (elements.wordsArr.includes(elements.wordNum));
@@ -24,11 +24,12 @@ function selectRandomWord() {
 
 // Level Up
 function newLevel() {
-  if (level === 4) champion();
+  if (elements.level === 4) champion();
   
   // Change wallpaper
   elements.prevScore = elements.actualScore;
   elements.level++;
+  document.body.style.backgroundImage = `url("./img/wallpaper-${elements.level}.jpg")`;
   elements.wordsArr.length = 0;
   elements.actualLevelWords = wordsBase[elements.level];
 }

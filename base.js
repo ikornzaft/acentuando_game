@@ -55,11 +55,11 @@ export const wordsBase = [
     [['náu', 'fra', 'go'], 'esdrújula', 'syll-1'],
     [['co', 'á', 'gu', 'lo'], 'esdrújula', 'syll-2'],
     [['e', 'ó', 'li', 'co'], 'esdrújula', 'syll-2'],
-    [['coá', 'gu', 'lo'], 'esdrújula', 'syll-1'],
+    [['co', 'lec', 'ción'], 'aguda', 'syll-3'],
     [['far', 'ma', 'céu', 'ti', 'co'], 'esdrújula', 'syll-3'],
     [['bio', 'grá', 'fi', 'co'], 'esdrújula', 'syll-2'],
     [['ca', 'ce', 'rí', 'a'], 'grave', 'syll-3'],
-    [['bú', 'ho'], 'grave', 'syll-1'],
+    [['a', 'za', 'frán'], 'aguda', 'syll-3'],
     [['e', 'go', 'ís', 'mo'], 'grave', 'syll-3'],
     [['de', 'sa', 'fí' , 'o'], 'grave', 'syll-3']
   ]

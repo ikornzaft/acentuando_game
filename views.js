@@ -1,4 +1,4 @@
-import { elements, cheersMap, colorMap } from "./base.js";
+import { elements, cheersMap, colorMap, wordsBase} from "./base.js";
 
 // Expands the selected stage
 export function expandsStage(stg) {
@@ -178,6 +178,7 @@ export function finish() {
   elements.stage = -1;
   // erase used word list
   elements.wordsArr.length = 0;
+  elements.actualLevelWords = wordsBase[0];
   const markup = `
     <div id="finish">
       <div id="text__finish">
@@ -193,4 +194,8 @@ export function finish() {
   } else {
     document.getElementById('text__finish').textContent = '¡Volvé a intentarlo!';
   }
+}
+
+export function champion() {
+  alert('Winner!');
 }

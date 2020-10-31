@@ -1,25 +1,36 @@
-import { elements, words } from "./base.js";
-import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumber, renderSyll, accRight, accWrong, finish } from "./views.js"
+import { elements, wordsBase } from "./base.js";
+import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumber, renderSyll, accRight, accWrong, finish, champion } from "./views.js"
 
 /************
  * FUNCTIONS
  */
 
 function init() {
-  elements.word = selectWord();
+  elements.word = selectRandomWord();
   elements.wordString = elements.word[0].join('');
   elements.syllNumber = 1;
   expandsStage(elements.stage0);
 }
 
 // Choose word
-function selectWord() {
-  let wordNum;
+function selectRandomWord() {
+  if (elements.prevScore + 350 <= elements.actualScore) newLevel();
   do {
-    wordNum = Math.floor(Math.random() * (words.length - 0) + 0);
-  } while (elements.wordsArr.includes(wordNum));
-  elements.wordsArr.push(wordNum);
-  return words[wordNum];
+    elements.wordNum = Math.floor(Math.random() * (elements.actualLevelWords.length) + 0); // Le saqué el -0 después de length
+  } while (elements.wordsArr.includes(elements.wordNum));
+  elements.wordsArr.push(elements.wordNum);
+  return elements.actualLevelWords[elements.wordNum];
+}
+
+// Level Up
+function newLevel() {
+  if (level === 4) champion();
+  
+  // Change wallpaper
+  elements.prevScore = elements.actualScore;
+  elements.level++;
+  elements.wordsArr.length = 0;
+  elements.actualLevelWords = wordsBase[elements.level];
 }
 
 // Play word .mp3
@@ -133,5 +144,4 @@ elements.containerSyll.addEventListener('click', el => checkAccentuation(el));
 /************
  * Start game
  */
-
 init();

@@ -109,7 +109,6 @@ export function wrongSyll() {
   }, 2000);
 }
 
-
 export function updateSyllNumber(num) {
   if (num === 1) {
     elements.syllNumText.textContent = 'primera';
@@ -134,51 +133,53 @@ export function renderSyll(syll, num) {
     </div>
     </div>
     `;
-    
     elements.containerSyll.insertAdjacentHTML('afterbegin', markup);
-  }
+}
   
-  export function accRight(type) {
-    elements.stage3Text1.textContent = '¡Felicitaciones!';
-    elements.stage3Text2.textContent = `La palabra ${elements.wordString} es ${type}.`;
-    setTimeout(() => {
-      new Audio(`./audio/final.mp3`).play();
-      elements.stage3Text1.textContent = '¡Muy bien! Ya tenemos a la palabra dividida en sílabas.';
-      elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
-      elements.inputSyll.style.visibility = 'visible';
-      elements.syllText.style.visibility = 'visible';
-      elements.stage = 0;
-      elements.endStage2 = false;
-      elements.syllNumber = 1;
-      document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
-      elements.container2.appendChild(elements.containerSyll);
-    }, 2000);
-  }
-  
-  // If the user inputs a wrong syllable
-  export function accWrong(type) {
+// Correct accentuation
+export function accRight(type) {
+  elements.stage3Text1.textContent = '¡Felicitaciones!';
+  elements.stage3Text2.textContent = `La palabra ${elements.wordString} es ${type}.`;
+  setTimeout(() => {
+    new Audio(`./audio/final.mp3`).play();
+    elements.stage3Text1.textContent = '¡Muy bien! Ya tenemos a la palabra dividida en sílabas.';
+    elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
+    elements.inputSyll.style.visibility = 'visible';
+    elements.syllText.style.visibility = 'visible';
     elements.stage = 0;
-    elements.stage3Text1.style.visibility = 'hidden';
-    new Audio(`./audio/003.mp3`).play();
+    elements.endStage2 = false;
+    elements.syllNumber = 1;
+    document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
+    elements.container2.appendChild(elements.containerSyll);
+  }, 2000);
+}
   
-    elements.stage3Text2.textContent = `¡Oh, no! ¡La palabra ${elements.wordString} es ${type}!`;
-    setTimeout(() => {
-      elements.stage3Text1.style.visibility = 'visible';
-      elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
-      elements.inputSyll.style.visibility = 'visible';
-      elements.syllText.style.visibility = 'visible';
-      elements.endStage2 = false;
-      elements.syllNumber = 1;
-      document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
-      elements.container2.appendChild(elements.containerSyll);
-    }, 2000);
-  }
+// If the user inputs a wrong syllable
+export function accWrong(type) {
+  elements.stage = 0;
+  elements.stage3Text1.style.visibility = 'hidden';
+  new Audio(`./audio/003.mp3`).play();
+
+  elements.stage3Text2.textContent = `¡Oh, no! ¡La palabra ${elements.wordString} es ${type}!`;
+  setTimeout(() => {
+    elements.stage3Text1.style.visibility = 'visible';
+    elements.stage3Text2.textContent = 'Ahora tenemos que descubrir cuál es la sílaba tónica.';
+    elements.inputSyll.style.visibility = 'visible';
+    elements.syllText.style.visibility = 'visible';
+    elements.endStage2 = false;
+    elements.syllNumber = 1;
+    document.querySelectorAll('.syllable').forEach((e) => elements.containerSyll.removeChild(e));
+    elements.container2.appendChild(elements.containerSyll);
+  }, 2000);
+}
 
 export function finish() {
   elements.stage = -1;
+  elements.level = 0;
   // erase used word list
   elements.wordsArr.length = 0;
   elements.actualLevelWords = wordsBase[0];
+  elements.prevScore = 0;
   const markup = `
     <div id="finish">
       <div id="text__finish">
@@ -198,5 +199,25 @@ export function finish() {
 }
 
 export function champion() {
-  alert('Winner!');
+  elements.stage = -1;
+  elements.level = 0;
+  // erase used word list
+  elements.wordsArr.length = 0;
+  elements.prevScore = 0;
+  elements.actualLevelWords = wordsBase[0];
+  const markup = `
+    <div id="finish">
+      <div id="text__finish">
+        ¡Increible! ¡Completaste todos los niveles!
+      </div>
+      <p>Presioná "enter" para volver a jugar</p>
+    </div>
+  `;
+
+  elements.board.insertAdjacentHTML('afterbegin', markup);
+  elements.getElementById('finish').classList.add('.champion');
+  if (elements.actualScore > elements.record) {
+    elements.record = elements.actualScore;
+    localStorage.setItem('hiScore', elements.actualScore);
+  }
 }

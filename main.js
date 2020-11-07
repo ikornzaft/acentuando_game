@@ -6,7 +6,7 @@ import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumbe
  */
 
 function init() {
-  elements.word = selectRandomWord();
+  elements.word = selectRandomWord(); 
   elements.wordString = elements.word[0].join('');
   elements.syllNumber = 1;
   expandsStage(elements.stage0);
@@ -14,7 +14,12 @@ function init() {
 
 // Choose word
 function selectRandomWord() {
-  if (elements.prevScore + 320 <= elements.actualScore) newLevel();
+  if (elements.prevScore + elements.levelUpScore <= elements.actualScore && elements.level < 3) {
+    console.log(elements.level);
+    newLevel();
+  } else if (elements.prevScore + elements.levelUpScore <= elements.actualScore && elements.level === 3) {
+    champion();
+  };
   do {
     elements.wordNum = Math.floor(Math.random() * (elements.actualLevelWords.length) + 0);
   } while (elements.wordsArr.includes(elements.wordNum));
@@ -24,8 +29,6 @@ function selectRandomWord() {
 
 // Level Up
 function newLevel() {
-  if (elements.level === 4) champion();
-  
   // Change wallpaper
   elements.prevScore = elements.actualScore;
   elements.level++;
@@ -53,7 +56,8 @@ function checkWord(w) {
 }
 
 // Check the syllabes, one by one
-function checkSyll(s) {
+function checkSyll(s) { 
+  // Wrong syllabe
   if (s !== elements.word[0][elements.syllNumber - 1]) {
     wrongSyll();
     elements.syllNumber = 1;
@@ -61,6 +65,7 @@ function checkSyll(s) {
       finish();
     }, 2000);
   } else {
+    // Correct syllabe
     updateSyllNumber(elements.syllNumber + 1);
     renderSyll(s, elements.syllNumber);
     syllCheers(5);
@@ -143,16 +148,19 @@ elements.machine.addEventListener('click', () => {
 
 elements.containerSyll.addEventListener('click', el => checkAccentuation(el));
 
+// On page load, updates hiscore
+window.addEventListener('load', () => {
+ if (localStorage.getItem('hiScore')) {
+   elements.record = localStorage.getItem('hiScore');
+ } else {
+   elements.record = 0;
+ }
+ elements.hiscore.textContent = elements.record;
+});
 
 /************
  * Start game
  */
-window.addEventListener('load', () => {
-  if (localStorage.getItem('hiScore')) {
-    elements.record = localStorage.getItem('hiScore');
-  } else {
-    elements.record = 0;
-  }
-  elements.hiscore.textContent = elements.record;
-});
+
+
 init();

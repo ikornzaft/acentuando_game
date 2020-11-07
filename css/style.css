@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 800px;
-  height: 650px;
+  height: 630px;
   display: flex;
   flex-direction: column;
 }
@@ -364,4 +364,8 @@ font-weight: 200;
 #finish p {
   margin-top: 30px;
   font-size: 1.2rem;
+}
+
+.champion {
+  background-color: #99ebff;
 }

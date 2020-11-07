@@ -21,7 +21,7 @@ function selectRandomWord() {
     champion();
   };
   do {
-    elements.wordNum = Math.floor(Math.random() * (elements.actualLevelWords.length) + 0); // Le saqué el -0 después de length
+    elements.wordNum = Math.floor(Math.random() * (elements.actualLevelWords.length) + 0);
   } while (elements.wordsArr.includes(elements.wordNum));
   elements.wordsArr.push(elements.wordNum);
   return elements.actualLevelWords[elements.wordNum];
@@ -91,6 +91,7 @@ function checkAccentuation(el) {
     if (el.target.id === elements.word[2] || el.target.closest('.syllable').id === elements.word[2]) {
       cheers(20);
       accRight(elements.word[1]);
+      elements.stage = 0;
       setTimeout(() => {
         init();
       }, 2000);

@@ -344,28 +344,35 @@ font-weight: 200;
 }
 
 #finish {
+  background-color: #aaa;  
+  background-image: url("../img/robot.png");
+  background-size: cover;
+  justify-content: center;
+}
+
+#champion {
+  background-color: #fff;  
+  background-image: url("../img/happy-robot.jpg");
+  background-size: cover;
+  justify-content: flex-start;
+}
+
+.window__message {
   z-index: 20;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   border: 2px solid #333;
-  background-color: #aaa;  
-  background-image: url("../img/robot.png");
-  background-size: cover;
   width: 550px;
-  height: 350px;
+  height: 380px;
   font-size: 2rem;
   cursor: pointer;
 }
 
-#finish p {
+#window__message p {
   margin-top: 30px;
   font-size: 1.2rem;
 }
 
-.champion {
-  background-color: #99ebff;
-}

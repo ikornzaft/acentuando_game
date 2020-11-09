@@ -1,5 +1,5 @@
 import { elements, wordsBase } from "./base.js";
-import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumber, renderSyll, accRight, accWrong, finish, champion } from "./views.js"
+import { expandsStage, cheers, syllCheers, wrongWord, wrongSyll, updateSyllNumber, renderSyll, accRight, accWrong, finish, champion, reset } from "./views.js"
 
 /************
  * FUNCTIONS
@@ -15,9 +15,9 @@ function init() {
 // Choose word
 function selectRandomWord() {
   if (elements.prevScore + elements.levelUpScore <= elements.actualScore && elements.level < 3) {
-    console.log(elements.level);
     newLevel();
   } else if (elements.prevScore + elements.levelUpScore <= elements.actualScore && elements.level === 3) {
+    elements.level = 4;
     champion();
   };
   do {
@@ -116,16 +116,28 @@ elements.continue.addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', function keyEnter(e) {
-  if (e.code === 'Enter' && elements.stage === 0) {
+  if (e.code === 'Enter' && elements.stage === 0 && elements.level < 4) {
     expandsStage(elements.stage1); // if stage = 0, expands Stage 1
+    console.log('opcion0');
   } else if (e.code === 'Enter' && elements.stage === 1) { 
+    console.log('opcion1');
     checkWord(elements.inputWord.value.toLowerCase()); // calls checkWord function passing inputWord value
   } else if (e.code === 'Enter' && elements.stage === 2 && !elements.endStage2) {
+    console.log('opcion2');
     checkSyll(elements.inputSyll.value.toLowerCase());
   } else if (e.code === 'Enter' && elements.stage < 0) {
+    console.log('opcion3');
     elements.stage = 0;
     elements.actualScore = 0;
     elements.board.removeChild(document.getElementById('finish'));
+    document.body.style.backgroundImage = `url("./img/wallpaper-0.jpg")`;
+    init();
+  } else if (e.code === 'Enter' && elements.level === 4) {
+    console.log('Enter');
+    reset();
+    elements.stage = 0;
+    elements.actualScore = 0;
+    elements.board.removeChild(document.getElementById('champion'));
     document.body.style.backgroundImage = `url("./img/wallpaper-0.jpg")`;
     init();
   } else if (e.code === 'Space' && elements.stage === 0) {
@@ -138,6 +150,12 @@ elements.board.addEventListener('click', () => {
     elements.stage = 0;
     elements.actualScore = 0;
     elements.board.removeChild(document.getElementById('finish'));
+    init();
+  } else if (elements.level === 4) {
+    elements.stage = 0;
+    elements.actualScore = 0;
+    elements.board.removeChild(document.getElementById('champion'));
+    document.body.style.backgroundImage = `url("./img/wallpaper-0.jpg")`;
     init();
   }
 });

@@ -92,7 +92,7 @@ export const elements = {
   syllables: document.querySelectorAll('.syllable'),
   container2: document.getElementById('content__stage2'),
   container3: document.getElementById('content__stage3'),
-  levelUpScore: 50,
+  levelUpScore: 320,
   stage: 0,
   level: 0,
   wordNum: 0,

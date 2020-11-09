@@ -173,15 +173,19 @@ export function accWrong(type) {
   }, 2000);
 }
 
-export function finish() {
+export function reset() {
   elements.stage = -1;
   elements.level = 0;
   // erase used word list
   elements.wordsArr.length = 0;
-  elements.actualLevelWords = wordsBase[0];
   elements.prevScore = 0;
+  elements.actualLevelWords = wordsBase[0];
+}
+
+export function finish() {
+  reset();
   const markup = `
-    <div id="finish">
+    <div id="finish" class="window__message">
       <div id="text__finish">
         ¡Felicitaciones! ¡Lograste un nuevo record!
       </div>
@@ -199,15 +203,10 @@ export function finish() {
 }
 
 export function champion() {
-  elements.stage = -1;
-  elements.level = 0;
-  // erase used word list
-  elements.wordsArr.length = 0;
-  elements.prevScore = 0;
-  elements.actualLevelWords = wordsBase[0];
+  new Audio(`./audio/004.mp3`).play();
   const markup = `
-    <div id="finish">
-      <div id="text__finish">
+    <div id="champion" class="window__message">
+      <div id="text__champion">
         ¡Increible! ¡Completaste todos los niveles!
       </div>
       <p>Presioná "enter" para volver a jugar</p>
@@ -215,7 +214,6 @@ export function champion() {
   `;
 
   elements.board.insertAdjacentHTML('afterbegin', markup);
-  elements.getElementById('finish').classList.add('.champion');
   if (elements.actualScore > elements.record) {
     elements.record = elements.actualScore;
     localStorage.setItem('hiScore', elements.actualScore);
